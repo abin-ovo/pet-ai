@@ -1,0 +1,26 @@
+appId: com.xiaotuan.pet
+productName: 小团
+asar: true
+directories:
+  output: release
+  buildResources: resources
+files:
+  - out/**/*
+  - resources/**/*
+  - package.json
+artifactName: '${productName}-${version}-${os}-${arch}.${ext}'
+mac:
+  icon: resources/icon.icns
+  category: public.app-category.entertainment
+  identity: null
+  target: dir
+win:
+  icon: resources/icon.ico
+  target:
+    - target: nsis
+      arch: x64
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+electronDownload:
+  mirror: https://npmmirror.com/mirrors/electron/
